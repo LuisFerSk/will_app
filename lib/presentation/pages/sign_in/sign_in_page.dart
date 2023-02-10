@@ -8,6 +8,7 @@ import 'package:will_app/presentation/pages/widgets/button.dart';
 import 'package:will_app/presentation/pages/widgets/input.dart';
 import 'package:will_app/presentation/cubit/sign_in/sign_in_cubit.dart';
 import 'package:will_app/presentation/pages/widgets/scaffold_body.dart';
+import 'package:will_app/presentation/utils/preferences/token.dart';
 import 'package:will_app/presentation/utils/routes.dart';
 import 'package:will_app/presentation/utils/validators/sing_in_validator.dart';
 
@@ -18,7 +19,8 @@ class SignInPage extends StatefulWidget {
   State<SignInPage> createState() => _SignInPageState();
 }
 
-class _SignInPageState extends State<SignInPage> with SignInValidationMixin {
+class _SignInPageState extends State<SignInPage>
+    with SignInValidationMixin, TokenPreferencesMixin {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
@@ -35,6 +37,7 @@ class _SignInPageState extends State<SignInPage> with SignInValidationMixin {
         }
         if (state is SignInSuccess) {
           pop();
+          setToken(state.singIn.token);
           transitionDashboard();
         }
         if (state is SignInFailure) {

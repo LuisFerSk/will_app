@@ -29,7 +29,7 @@ class SignInCubit extends Cubit<SignInState> {
   ) {
     return response.fold(
       (failure) => SignInFailure(mapFailureToMessage(failure)),
-      (movieDetail) => SignInSuccess(movieDetail),
+      (singIn) => SignInSuccess(singIn),
     );
   }
 }

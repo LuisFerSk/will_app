@@ -4,8 +4,6 @@ mixin SignInValidationMixin {
       return null;
     }
 
-    // if(RegExp(r'').hasMatch(value)){ }
-
     return 'El nombre de usuario es requerido';
   }
 

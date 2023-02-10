@@ -18,10 +18,11 @@ class MaintenanceFindMadePerDayRepository
       : _maintenanceFindMadePerDay = maintenanceFindMadePerDay;
 
   @override
-  Future<Either<Failure, MaintenanceFindMadePerDayResponse>> call() async {
+  Future<Either<Failure, MaintenanceFindMadePerDayResponse>> call(
+      String token) async {
     if (await isInConnection()) {
       try {
-        final client = await _maintenanceFindMadePerDay();
+        final client = await _maintenanceFindMadePerDay(token);
         return Right(client);
       } on DioError catch (e) {
         return Left(ServerFailure(message: e.message));
