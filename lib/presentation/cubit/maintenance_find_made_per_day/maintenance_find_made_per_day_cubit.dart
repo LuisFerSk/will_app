@@ -17,7 +17,7 @@ class MaintenanceFindMadePerDayCubit
 
   final AbstractGetMaintenanceFindMadePerDay _getMaintenanceFindMadePerDay;
 
-  void getMaintenanceFindMadePerDay(String token) async {
+  void getMaintenanceFindMadePerDay(String? token) async {
     emit(MaintenanceFindMadePerDayLoading());
 
     final response = await _getMaintenanceFindMadePerDay(token);

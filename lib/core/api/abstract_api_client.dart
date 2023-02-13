@@ -17,9 +17,9 @@ abstract class AbstractAPIClient {
 
   @GET('/verify-token')
   Future<HttpResponse<VerifyTokenResponse>> getVerifyToken(
-      @Header('x-access-token') String token);
+      @Header('x-access-token') String? token);
 
   @GET('/maintenance/find-made-per-day')
   Future<HttpResponse<MaintenanceFindMadePerDayResponse>>
-      getMaintenanceFindMadePerDay(@Header('x-access-token') String token);
+      getMaintenanceFindMadePerDay(@Header('x-access-token') String? token);
 }

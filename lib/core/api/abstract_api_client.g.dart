@@ -47,6 +47,7 @@ class _AbstractAPIClient implements AbstractAPIClient {
   Future<HttpResponse<VerifyTokenResponse>> getVerifyToken(token) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{r'x-access-token': token};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
@@ -73,6 +74,7 @@ class _AbstractAPIClient implements AbstractAPIClient {
       getMaintenanceFindMadePerDay(token) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{r'x-access-token': token};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};

@@ -12,7 +12,7 @@ class MaintenanceFindMadePerDayService
       : _apiClient = apiClient;
 
   @override
-  Future<MaintenanceFindMadePerDayResponse> call(String token) async {
+  Future<MaintenanceFindMadePerDayResponse> call(String? token) async {
     final client = await _apiClient.getMaintenanceFindMadePerDay(token);
 
     if (client.response.statusCode == 200) {

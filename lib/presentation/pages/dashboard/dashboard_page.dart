@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:will_app/presentation/utils/preferences/token.dart';
+
+import 'package:will_app/presentation/pages/dashboard/widgets/drawer.dart';
+import 'package:will_app/presentation/pages/dashboard/widgets/chart.dart';
+import 'package:will_app/presentation/pages/widgets/scaffold_body.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -8,10 +11,13 @@ class DashboardPage extends StatefulWidget {
   State<DashboardPage> createState() => _DashboardPageState();
 }
 
-class _DashboardPageState extends State<DashboardPage>
-    with TokenPreferencesMixin {
+class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
-    return const Text('dashboard');
+    return ScaffoldBody(
+      body: const ChartWidget(),
+      appBar: AppBar(title: const Text('admin')),
+      drawer: const DrawerWidget(),
+    );
   }
 }

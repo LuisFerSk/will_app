@@ -15,7 +15,7 @@ class GetMaintenanceFindMadePerDay
       : _maintenanceFindMadePerDay = maintenanceFindMadePerDay;
 
   @override
-  Future<Either<Failure, MaintenanceFindMadePerDay>> call(String token) async {
+  Future<Either<Failure, MaintenanceFindMadePerDay>> call(String? token) async {
     return _maintenanceFindMadePerDay(token);
   }
 }

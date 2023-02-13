@@ -1,17 +1,12 @@
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:will_app/presentation/utils/preferences/preferences.dart';
 
-mixin TokenPreferencesMixin {
-  final _tokenKey = 'token';
+class TokenPreferences {
+  static const _tokenKey = 'token';
 
-  Future<void> setToken(String token) async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
+  static Future<void> setToken(String token) =>
+      Preferences.setPreference(_tokenKey, token);
 
-    await preferences.setString(_tokenKey, token);
-  }
+  static Future<String?> getToken() => Preferences.getPreference(_tokenKey);
 
-  Future<String?> getToken() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-
-    return preferences.getString(_tokenKey);
-  }
+  static Future<bool> removeToken() => Preferences.removePreference(_tokenKey);
 }

@@ -7,6 +7,8 @@ abstract class VerifyTokenState extends Equatable {
   List<Object> get props => [];
 }
 
+class VerifyTokenInitial extends VerifyTokenState {}
+
 class VerifyTokenLoading extends VerifyTokenState {}
 
 class VerifyTokenSuccess extends VerifyTokenState {

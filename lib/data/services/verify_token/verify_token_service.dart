@@ -11,7 +11,7 @@ class VerifyTokenService implements AbstractVerifyTokenServices {
       : _apiClient = apiClient;
 
   @override
-  Future<VerifyTokenResponse> call(String token) async {
+  Future<VerifyTokenResponse> call(String? token) async {
     final client = await _apiClient.getVerifyToken(token);
 
     if (client.response.statusCode == 200) {

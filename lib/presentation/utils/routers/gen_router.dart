@@ -39,10 +39,11 @@ Route<Object>? _errorRoute() {
   });
 }
 
-Route<Object>? _buildRoute(
-    {required RouteSettings settings,
-    required Widget screen,
-    bool fullscreenDialog = false}) {
+Route<Object>? _buildRoute({
+  required RouteSettings settings,
+  required Widget screen,
+  bool fullscreenDialog = false,
+}) {
   return CustomMaterialPageRoute(
     settings: settings,
     fullscreenDialog: fullscreenDialog,

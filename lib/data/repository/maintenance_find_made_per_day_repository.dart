@@ -19,7 +19,7 @@ class MaintenanceFindMadePerDayRepository
 
   @override
   Future<Either<Failure, MaintenanceFindMadePerDayResponse>> call(
-      String token) async {
+      String? token) async {
     if (await isInConnection()) {
       try {
         final client = await _maintenanceFindMadePerDay(token);

@@ -14,12 +14,16 @@ class VerifyTokenCubit extends Cubit<VerifyTokenState> {
 
   final AbstractGetVerifyToken _getVerifyToken;
 
-  void getVerifyToken(String token) async {
+  void getVerifyToken(String? token) async {
     emit(VerifyTokenLoading());
 
     final response = await _getVerifyToken(token);
 
     emit(_failureOrSuccess(response));
+  }
+
+  void logout() {
+    emit(VerifyTokenInitial());
   }
 
   VerifyTokenState _failureOrSuccess(

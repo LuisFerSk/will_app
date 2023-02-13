@@ -16,7 +16,7 @@ class VerifyTokenRepository
       : _verifyToken = verifyToken;
 
   @override
-  Future<Either<Failure, VerifyTokenResponse>> call(String token) async {
+  Future<Either<Failure, VerifyTokenResponse>> call(String? token) async {
     if (await isInConnection()) {
       try {
         final client = await _verifyToken(token);

@@ -12,7 +12,7 @@ class GetVerifyToken implements AbstractGetVerifyToken {
       : _verifyToken = verifyToken;
 
   @override
-  Future<Either<Failure, VerifyToken>> call(String token) async {
+  Future<Either<Failure, VerifyToken>> call(String? token) async {
     return _verifyToken(token);
   }
 }
