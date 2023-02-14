@@ -14,18 +14,20 @@ class ErrorMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          message,
-          style: const TextStyle(fontSize: 16),
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(height: size.height * 0.02),
-        ElevatedButton(
-            onPressed: onPressed, child: const Text('Volver a intentarlo'))
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            message,
+            style: const TextStyle(fontSize: 16),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: size.height * 0.02),
+          ElevatedButton(
+              onPressed: onPressed, child: const Text('Volver a intentarlo'))
+        ],
+      ),
     );
   }
 }

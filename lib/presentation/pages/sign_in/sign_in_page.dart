@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:will_app/presentation/cubit/verify_token/verify_token_cubit.dart';
-import 'package:will_app/presentation/pages/dashboard/dashboard_page.dart';
-import 'package:will_app/presentation/pages/widgets/loading_indicator.dart';
-import 'package:will_app/presentation/utils/preferences/token.dart';
-import 'package:will_app/presentation/pages/sign_in/widgets/form.dart';
+import 'package:will_app/presentation/pages/widgets/input.dart';
+import 'package:will_app/presentation/pages/sign_in/widgets/button/button.dart';
+import 'package:will_app/presentation/pages/widgets/scaffold_body.dart';
+import 'package:will_app/presentation/utils/validators/sing_in_validator.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -14,30 +12,72 @@ class SignInPage extends StatefulWidget {
   State<SignInPage> createState() => _SignInPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
-  @override
-  void initState() {
-    super.initState();
+class _SignInPageState extends State<SignInPage> with SignInValidationMixin {
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
 
-    TokenPreferences.getToken().then(
-      (value) => context.read<VerifyTokenCubit>().getVerifyToken(value),
-    );
-  }
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<VerifyTokenCubit, VerifyTokenState>(
-      builder: (context, state) {
-        if (state is VerifyTokenLoading) {
-          return const LoadingIndicator();
-        }
+    Size size = MediaQuery.of(context).size;
 
-        if (state is VerifyTokenSuccess) {
-          return const DashboardPage();
-        }
-
-        return const FormWidget();
-      },
+    return ScaffoldBody(
+      body: Center(
+        child: SingleChildScrollView(
+          child: Container(
+            margin: const EdgeInsets.all(20),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey, //New
+                  blurRadius: 5,
+                )
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(50),
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/imgs/logo.png',
+                    fit: BoxFit.fill,
+                  ),
+                  Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        SizedBox(height: size.height * 0.07),
+                        Input(
+                          label: 'Username',
+                          controller: _usernameController,
+                          isValid: isUsernameValid,
+                          keyboardType: TextInputType.name,
+                        ),
+                        SizedBox(height: size.height * 0.02),
+                        Input(
+                          label: 'Contraseña',
+                          controller: _passwordController,
+                          isValid: isPasswordValid,
+                          keyboardType: TextInputType.visiblePassword,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: size.height * 0.02),
+                  ButtonWidget(
+                    formKey: _formKey,
+                    passwordController: _passwordController,
+                    usernameController: _usernameController,
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

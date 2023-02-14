@@ -21,7 +21,7 @@ class _ChartWidgetState extends State<ChartWidget> {
     super.initState();
 
     TokenPreferences.getToken().then(
-      (value) => _getMaintenanceFindMadePerDay(context, value.toString()),
+      (value) => _getMaintenanceFindMadePerDay(context, value),
     );
   }
 

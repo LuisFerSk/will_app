@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:will_app/core/frameword/colors.dart';
-import 'package:will_app/presentation/cubit/verify_token/verify_token_cubit.dart';
+import 'package:will_app/presentation/cubit/sign_in/sign_in_cubit.dart';
+import 'package:will_app/presentation/utils/preferences/preferences.dart';
 import 'package:will_app/presentation/utils/preferences/token.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -66,13 +67,9 @@ class DrawerWidget extends StatelessWidget {
           ListTile(
             title: const Text('Cerrar sesión'),
             onTap: () {
-              TokenPreferences.removeToken().then(
-                (value) {
-                  if (value) {
-                    context.read<VerifyTokenCubit>().logout();
-                  }
-                },
-              );
+              Preferences.cleanPreference();
+
+              context.read<SignInCubit>().logout();
             },
           ),
         ],

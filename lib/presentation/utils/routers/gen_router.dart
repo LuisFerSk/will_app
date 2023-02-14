@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:will_app/presentation/pages/dashboard/dashboard_page.dart';
 import 'package:will_app/presentation/pages/sign_in/sign_in_page.dart';
+import 'package:will_app/presentation/pages/widgets/loading_indicator.dart';
 import 'package:will_app/presentation/utils/routers/routes.dart';
 
 Route<Object>? generateRoute(RouteSettings settings) {
@@ -23,6 +25,8 @@ Route<Object>? generateRoute(RouteSettings settings) {
       return _buildRoute(settings: settings, screen: const SignInPage());
     case AppRoute.dashboard:
       return _buildRoute(settings: settings, screen: const DashboardPage());
+    case AppRoute.loading:
+      return _buildRoute(settings: settings, screen: const LoadingIndicator());
   }
 }
 

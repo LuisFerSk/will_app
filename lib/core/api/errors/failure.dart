@@ -26,9 +26,11 @@ class CacheFailure extends Failure {
 String mapFailureToMessage(Failure failure) {
   if (failure is ServerFailure) {
     return failure.message;
-  } else if (failure is NoConnectionFailure) {
-    return failure.message;
-  } else {
+  }
+
+  if (failure is NoConnectionFailure) {
     return failure.message;
   }
+
+  return failure.message;
 }

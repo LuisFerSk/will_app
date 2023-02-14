@@ -18,4 +18,10 @@ class Preferences {
 
     return preferences.remove(key);
   }
+
+  static void cleanPreference() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+
+    preferences.clear();
+  }
 }

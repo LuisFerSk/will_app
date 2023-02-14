@@ -11,6 +11,10 @@ extension AppRouter<T extends StatefulWidget> on State<T> {
     NavigationController.push(Routes.dashboard.routeName, clean: true);
   }
 
+  void transitionLoading() {
+    NavigationController.push(Routes.loading.routeName, clean: true);
+  }
+
   void pop() {
     Navigator.pop(context);
   }
