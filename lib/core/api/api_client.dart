@@ -19,7 +19,9 @@ class APIClient {
 
     if (kDebugMode) {
       dio.interceptors.add(
-          CurlLogInterceptor(disableRequestBody: disableRequestBodyLogging));
+        CurlLogInterceptor(disableRequestBody: disableRequestBodyLogging),
+      );
+
       dio.interceptors.add(QueryInterceptor());
     }
     return AbstractAPIClient(dio, baseUrl: baseDomain);

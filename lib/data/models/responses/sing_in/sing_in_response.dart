@@ -1,4 +1,4 @@
-import 'package:will_app/domain/entities/sign_in.dart';
+import 'package:will_app/domain/entities/response/sign_in.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'sing_in_response.g.dart';

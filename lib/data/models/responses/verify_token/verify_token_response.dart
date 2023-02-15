@@ -1,4 +1,4 @@
-import 'package:will_app/domain/entities/verify_token.dart';
+import 'package:will_app/domain/entities/response/verify_token.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'verify_token_response.g.dart';

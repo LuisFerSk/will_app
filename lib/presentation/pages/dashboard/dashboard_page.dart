@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:will_app/presentation/pages/dashboard/widgets/drawer.dart';
 import 'package:will_app/presentation/pages/dashboard/widgets/chart.dart';
+import 'package:will_app/presentation/pages/widgets/drawer.dart';
 import 'package:will_app/presentation/pages/widgets/scaffold_body.dart';
 
 class DashboardPage extends StatefulWidget {

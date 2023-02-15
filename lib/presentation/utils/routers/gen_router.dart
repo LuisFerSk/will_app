@@ -7,7 +7,7 @@ import 'package:will_app/presentation/utils/routers/routes.dart';
 
 Route<Object>? generateRoute(RouteSettings settings) {
   final namedRoute = settings.name == '/'
-      ? Routes.signIn
+      ? Routes.loading
       : Routes.values.firstWhere(
           (element) {
             if (settings.name != null) {

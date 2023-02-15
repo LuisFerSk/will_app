@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:will_app/domain/entities/maintenance_find_made_per_day.dart';
+import 'package:will_app/domain/entities/response/maintenance_find_made_per_day.dart';
 
 part 'maintenance_find_made_per_day_response.g.dart';
 

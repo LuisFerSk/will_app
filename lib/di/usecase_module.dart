@@ -1,8 +1,10 @@
 import 'package:will_app/domain/contracts/usecases/abstract_get_maintenance_find_made_per_day.dart';
 import 'package:will_app/domain/contracts/usecases/abstract_get_verify_token.dart';
+import 'package:will_app/domain/contracts/usecases/abstract_post_printer_scanner_create.dart';
 import 'package:will_app/domain/contracts/usecases/abstract_post_sign_in.dart';
 import 'package:will_app/domain/usecases/get_maintenance_find_made_per_day.dart';
 import 'package:will_app/domain/usecases/get_verify_token.dart';
+import 'package:will_app/domain/usecases/post_printer_scanner_create.dart';
 import 'package:will_app/domain/usecases/post_sign_in.dart';
 
 import 'repository_module.dart';
@@ -19,5 +21,10 @@ mixin UseCaseModule on RepositoryModule {
   AbstractGetMaintenanceFindMadePerDay get getMaintenanceFindMadePerDay {
     return GetMaintenanceFindMadePerDay(
         maintenanceFindMadePerDay: maintenanceFindMadePerDayRepository);
+  }
+
+  AbstractPostPrinterScannerCreate get getPostPrinterScannerCreate {
+    return PostPrinterScannerCreate(
+        printerScanner: printerScannerCreateRepository);
   }
 }

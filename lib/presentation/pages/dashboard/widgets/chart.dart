@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:will_app/domain/entities/maintenance_find_made_per_day.dart';
+import 'package:will_app/domain/entities/response/maintenance_find_made_per_day.dart';
 import 'package:will_app/presentation/cubit/maintenance_find_made_per_day/maintenance_find_made_per_day_cubit.dart';
 import 'package:will_app/presentation/pages/widgets/loading_indicator.dart';
 import 'package:will_app/presentation/utils/preferences/token.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:will_app/domain/entities/user.dart';
+import 'package:will_app/domain/entities/request/user.dart';
 import 'package:will_app/presentation/cubit/sign_in/sign_in_cubit.dart';
 import 'package:will_app/presentation/pages/widgets/button.dart';
 

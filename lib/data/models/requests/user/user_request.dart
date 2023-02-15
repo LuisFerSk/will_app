@@ -1,4 +1,4 @@
-import 'package:will_app/domain/entities/user.dart';
+import 'package:will_app/domain/entities/request/user.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user_request.g.dart';

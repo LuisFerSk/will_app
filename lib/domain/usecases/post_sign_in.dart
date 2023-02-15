@@ -4,8 +4,8 @@ import 'package:will_app/core/api/errors/failure.dart';
 import 'package:will_app/data/models/requests/user/user_request.dart';
 import 'package:will_app/domain/contracts/repositories/abstract_sign_in_repository.dart';
 import 'package:will_app/domain/contracts/usecases/abstract_post_sign_in.dart';
-import 'package:will_app/domain/entities/sign_in.dart';
-import 'package:will_app/domain/entities/user.dart';
+import 'package:will_app/domain/entities/response/sign_in.dart';
+import 'package:will_app/domain/entities/request/user.dart';
 
 class PostSignIn implements AbstractPostSignIn {
   final AbstractSignInRepository _signIn;

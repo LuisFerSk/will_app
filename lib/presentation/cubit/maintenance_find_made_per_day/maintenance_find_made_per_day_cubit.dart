@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:will_app/core/api/errors/failure.dart';
 import 'package:will_app/domain/contracts/usecases/abstract_get_maintenance_find_made_per_day.dart';
-import 'package:will_app/domain/entities/maintenance_find_made_per_day.dart';
+import 'package:will_app/domain/entities/response/maintenance_find_made_per_day.dart';
 
 part 'maintenance_find_made_per_day_state.dart';
 

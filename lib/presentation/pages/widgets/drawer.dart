@@ -3,13 +3,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:will_app/core/frameword/colors.dart';
 import 'package:will_app/presentation/cubit/sign_in/sign_in_cubit.dart';
 import 'package:will_app/presentation/utils/preferences/preferences.dart';
-import 'package:will_app/presentation/utils/preferences/token.dart';
+import 'package:will_app/presentation/utils/routes.dart';
 
-class DrawerWidget extends StatelessWidget {
+class DrawerWidget extends StatefulWidget {
   const DrawerWidget({
     super.key,
   });
 
+  @override
+  State<DrawerWidget> createState() => _DrawerWidgetState();
+}
+
+class _DrawerWidgetState extends State<DrawerWidget> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -25,8 +30,7 @@ class DrawerWidget extends StatelessWidget {
           ListTile(
             title: const Text('Home'),
             onTap: () {
-              // Update the state of the app.
-              // ...
+              transitionDashboard();
             },
           ),
           ListTile(
@@ -60,8 +64,7 @@ class DrawerWidget extends StatelessWidget {
           ListTile(
             title: const Text('Configuraciones de usuario'),
             onTap: () {
-              // Update the state of the app.
-              // ...
+              transitionLoading();
             },
           ),
           ListTile(

@@ -1,12 +1,12 @@
-class VerifyToken {
-  VerifyToken({
-    required this.status,
-    required this.message,
-    required this.info,
-  });
+import 'package:will_app/domain/entities/response/response.dart';
 
-  final String status;
-  final String message;
+class VerifyToken extends Response {
+  VerifyToken({
+    required String status,
+    required String message,
+    required this.info,
+  }) : super(status: status, message: message);
+
   final Info info;
 }
 

@@ -5,9 +5,8 @@ import 'package:equatable/equatable.dart';
 import 'package:will_app/core/api/errors/failure.dart';
 import 'package:will_app/domain/contracts/usecases/abstract_get_verify_token.dart';
 import 'package:will_app/domain/contracts/usecases/abstract_post_sign_in.dart';
-import 'package:will_app/domain/entities/user.dart';
-import 'package:will_app/domain/entities/verify_token.dart';
-import 'package:will_app/presentation/utils/preferences/token.dart';
+import 'package:will_app/domain/entities/request/user.dart';
+import 'package:will_app/domain/entities/response/verify_token.dart';
 
 part 'sign_in_state.dart';
 
