@@ -9,6 +9,8 @@ class LoadingIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return ScaffoldBody(
+      drawer: false,
+      appBar: false,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

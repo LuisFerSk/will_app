@@ -1,7 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Preferences {
-  static Future<void> setPreference(String key, String value) async {
+  static void setPreference(String key, String value) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
 
     await preferences.setString(key, value);

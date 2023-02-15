@@ -23,6 +23,8 @@ class _SignInPageState extends State<SignInPage> with SignInValidationMixin {
     Size size = MediaQuery.of(context).size;
 
     return ScaffoldBody(
+      drawer: false,
+      appBar: false,
       body: Center(
         child: SingleChildScrollView(
           child: Container(

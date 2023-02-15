@@ -36,8 +36,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           ListTile(
             title: const Text('Impresoras y scanners'),
             onTap: () {
-              // Update the state of the app.
-              // ...
+              transitionPrinterScanner();
             },
           ),
           ListTile(

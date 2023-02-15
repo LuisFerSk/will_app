@@ -11,6 +11,7 @@ import 'package:will_app/core/app_global.dart';
 import 'package:will_app/presentation/cubit/sign_in/sign_in_cubit.dart';
 import 'package:will_app/presentation/utils/preferences/preferences.dart';
 import 'package:will_app/presentation/utils/preferences/token.dart';
+import 'package:will_app/presentation/utils/preferences/username.dart';
 import 'package:will_app/presentation/utils/routers/gen_router.dart';
 import 'package:will_app/presentation/utils/routers/navigation_controller.dart';
 import 'package:will_app/presentation/utils/routes.dart';
@@ -74,6 +75,8 @@ class _RouteWidgetState extends State<RouteWidget> {
 
         if (state is VerifyTokenSuccess) {
           TokenPreferences.setToken(state.token);
+
+          UsernamePreferences.setUsername(state.verifyToken.info.username);
 
           transitionDashboard();
 

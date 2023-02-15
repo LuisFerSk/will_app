@@ -15,6 +15,10 @@ extension AppRouter<T extends StatefulWidget> on State<T> {
     NavigationController.push(Routes.loading.routeName, clean: true);
   }
 
+  void transitionPrinterScanner() {
+    NavigationController.push(Routes.printerScanner.routeName, clean: true);
+  }
+
   void pop() {
     Navigator.pop(context);
   }

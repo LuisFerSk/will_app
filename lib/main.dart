@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:will_app/core/config/app_config.dart';
 import 'package:will_app/core/enviroment/environment.dart';
 import 'package:will_app/presentation/app.dart';
