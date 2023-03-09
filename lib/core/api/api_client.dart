@@ -21,9 +21,10 @@ class APIClient {
       dio.interceptors.add(
         CurlLogInterceptor(disableRequestBody: disableRequestBodyLogging),
       );
-
-      dio.interceptors.add(QueryInterceptor());
     }
+
+    dio.interceptors.add(QueryInterceptor());
+
     return AbstractAPIClient(dio, baseUrl: baseDomain);
   }
 }
